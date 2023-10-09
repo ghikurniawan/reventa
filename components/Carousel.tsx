@@ -10,6 +10,7 @@ type Image = {
   id: number;
   thumbnail: string;
   full: string;
+  title: string;
 };
 
 type CarouselProps = {
@@ -20,7 +21,7 @@ const Carousel: React.FC<CarouselProps> = ({ images }) => {
   const [selectedTab, setSelectedTab] = useState(images[0]);
   const [index, setIndex] = useState(0)
   let { scrollYProgress } = useScroll();
-  let y = useTransform(scrollYProgress, [0,1], ['0%', '50%'])
+  let y = useTransform(scrollYProgress, [0,1], ['0%', '80%'])
 
   useEffect(()=>{
     console.log(scrollYProgress)
@@ -30,7 +31,7 @@ const Carousel: React.FC<CarouselProps> = ({ images }) => {
     const interval = setInterval(() => {
       setSelectedTab(images[index]);
       setIndex((index + 1) % images.length);
-    }, 3000);
+    }, 5000);
 
     return () => {
       clearInterval(interval);
@@ -39,10 +40,12 @@ const Carousel: React.FC<CarouselProps> = ({ images }) => {
 
   return (
     <div className="w-full relative bg-[url('/paralax-bg.jpg')] h-fit bg-no-repeat bg-cover">
-        <motion.img 
-              style={{y}} src='cloud.png' alt='cloud' className='absolute top-20 left-0' width={600} />
-        <motion.img 
-              style={{y}} src='cloud2.png' alt='cloud' className='absolute top-40 left-1/4' width={1200} />
+        <motion.img style={{y}} src='cloud.png' alt='cloud' className='absolute top-20 left-0' width={600} />
+        <motion.img style={{y}} src='cloud.png' alt='cloud' className='absolute top-20 left-0' width={600} />
+        <motion.img style={{y}} src='cloud.png' alt='cloud' className='absolute top-20 left-0' width={600} />
+        <motion.img style={{y}} src='cloud2.png' alt='cloud' className='absolute top-40 left-1/4' width={1200} />
+        <motion.img style={{y}} src='cloud2.png' alt='cloud' className='absolute top-40 left-1/4' width={1200} />
+        <motion.img style={{y}} src='cloud2.png' alt='cloud' className='absolute top-40 left-1/4' width={1200} />
         <div className='mt-80 absolute left-0 top-0 right-0 bottom-0 '>
           <AnimatePresence mode='wait'>
             <motion.div
@@ -63,12 +66,12 @@ const Carousel: React.FC<CarouselProps> = ({ images }) => {
             </motion.div>
           </AnimatePresence>
         </div>
-        <div className="mt-60 z-10 min-h-screen max-w-screen-xl mx-auto relative flex">
-          <div className='max-w-lg text-brand'>
+        <div className="mt-60 z-10 min-h-screen max-w-screen-xl mx-auto relative flex justify-between">
+          <div className='max-w-lg space-y-8'>
             <h1 className={`text-5xl ${tenor.className}`}>Our Home Defines Us</h1>
-            <p>Revanta Homes is a project by Rishabhdeo Builders & Developers. They build homes with timeless designs. Thet build homes which are beyond your dreams.</p>
+            <p className='text-xl'>Revanta Homes is a project by Rishabhdeo Builders & Developers. They build homes with timeless designs. Thet build homes which are beyond your dreams.</p>
           </div>
-            <nav className='absolute right-0 top-30 left-1/2' >
+            <nav className='w-2/4' >
               <motion.ul drag='x' dragConstraints={{left: 0 , right: 0}} className='w-full grid grid-cols-3 gap-2'>
                 {images.map((item, index) => (
                     <li
@@ -86,8 +89,12 @@ const Carousel: React.FC<CarouselProps> = ({ images }) => {
                         className="object-cover"
                         />
                       </AspectRatio>
+                      
                       {item === selectedTab ? (
-                        <motion.div className="absolute bottom-0 top-0 left-0 right-0 border-2 border-brandSecodary " layoutId="underline" />
+                        <>
+                          <motion.div className="absolute bottom-6 top-0 left-0 right-0 border-2 border-brandSecodary " layoutId="underline" />
+                          <p className='text-center'>{item.title}</p>
+                        </>
                       ) : null}
                     </li>
                 ))}
