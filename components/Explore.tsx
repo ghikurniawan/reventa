@@ -28,7 +28,6 @@ const Explore: FC<ExploreProps> = () => {
                         </div>
                         <div className="w-full h-full relative">
                                 <Image src={'/explore_images/orchid_floor_plan.png'} alt="Orchid" fill className="object-cover"/>
-
                         </div>
                         <div className="w-full h-full relative">
                                 <Image src={'/explore_images/orchid_floor_plan2.png'} alt="Orchid" fill className="object-cover"/>
@@ -41,18 +40,18 @@ const Explore: FC<ExploreProps> = () => {
                                     ORCHID
                                 </h3>
                                 <p className="font-light">25x50 PLOT AREA (WEST)</p>
-                                <p>1250 sqft</p>
-                                <p>Super Builtup Area</p>
-                                <p>2,097 Sqft</p>
+                                <p className="font-bold">1250 sqft</p>
+                                <p className="font-bold">Super Builtup Area</p>
+                                <p className="font-bold">2,097 Sqft</p>
                             </div>
                         </div>
                         <div className="w-full h-full relative">
                             <AspectRatio ratio={4/3}>
-                                <Image src={'/explore_images/orchid_isometri1.png'} alt="Orchid" fill className="object-cover"/>
+                                <Image src={'/explore_images/orchid_isometri1.png'} alt="Orchid" fill className="object-cover overflow-visible"/>
                             </AspectRatio>
                         </div>
                         <div className="w-full h-full relative">
-                            <Image src={'/explore_images/orchid_isometri2.png'} alt="Orchid" fill className="object-cover"/>
+                            <Image src={'/explore_images/orchid_isometri2.png'} alt="Orchid" fill className="object-cover overflow-visible"/>
                         </div>
                     </div>
                 </div>

@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { FC } from "react";
 import { Button } from "./ui/button";
-import { ArrowDownIcon, DownloadIcon, GlobeIcon } from "@radix-ui/react-icons";
+import { ArrowDownIcon, GlobeIcon } from "@radix-ui/react-icons";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -45,7 +45,7 @@ const Navbar: FC<NavbarProps> = () => {
           </ul>
         </div>
         <div className="flex gap-4">
-          <Button variant={"brand"} size={'sm'}>
+          <Button variant={"brand"} size={'sm'} className=" rounded-none">
             <ArrowDownIcon className="mr-4" /> Download Brochure
           </Button>
 
