@@ -22,7 +22,7 @@ const Hero: React.FC<HeroProps> = ({ images }) => {
   const [selectedTab, setSelectedTab] = useState(images[0]);
   const [index, setIndex] = useState(0)
   let { scrollYProgress } = useScroll();
-  let y = useTransform(scrollYProgress, [0,1], ['0%', '80%'])
+  let y = useTransform(scrollYProgress, [0,1], ['0%', '300%'])
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -61,7 +61,7 @@ const Hero: React.FC<HeroProps> = ({ images }) => {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.5 }}
-              className='relative w-full h-full shadow-lg'
+              className='relative w-full h-full'
             >
               <motion.img 
               src={selectedTab ? selectedTab.full : ""} 
@@ -86,14 +86,14 @@ const Hero: React.FC<HeroProps> = ({ images }) => {
                       className={`${item === selectedTab ? "relative" : ""} w-full h-full`}
                       onClick={() => (setSelectedTab(item), setIndex(index))}
                     >
-                      <AspectRatio ratio={4/3} className='relative col-span-2 bg-white shadow-lg'>
+                      <AspectRatio ratio={4/3} className='relative col-span-2 bg-white '>
                         <Image 
                         src={item?.thumbnail} 
                         draggable={false}
                         alt={'image'} 
                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                         fill 
-                        className="object-cover"
+                        className="object-cover shadow-lg"
                         />
                       </AspectRatio>
                       
