@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -23,18 +23,30 @@ interface NavbarProps {}
 
 const Navbar: FC<NavbarProps> = () => {
   const scrolled = useScroll(20);
-  const {isMobile} = useWindowSize()
+  const { isMobile } = useWindowSize();
 
   return (
-    <div className={`fixed top-0 w-full z-50 ${scrolled ? "bg-white bg-opacity-30 backdrop-blur-lg" : ""}`}>
+    <div
+      className={`fixed top-0 w-full z-50 ${
+        scrolled ? "bg-white bg-opacity-30 backdrop-blur-lg" : ""
+      }`}
+    >
       {isMobile ? (
         <div className="w-full flex justify-center pt-2">
-            <Image src="/logo.png" alt="Reventa Logo" height={50} width={50} />
+          <Image src="/logo.png" alt="Reventa Logo" height={50} width={50} />
         </div>
-      ) : ""}
+      ) : (
+        ""
+      )}
       <nav className="flex justify-between items-center my w-full max-w-screen-xl mx-auto h-20 lg:h-[110px] p-2">
         <div className="flex gap-2 lg:gap-28 items-center">
-          <Image src="/logo.png" alt="Reventa Logo" height={100} width={100} className="hidden lg:block" />
+          <Image
+            src="/logo.png"
+            alt="Reventa Logo"
+            height={100}
+            width={100}
+            className="hidden lg:block"
+          />
           <ul className="flex gap-2 lg:gap-10 text-brand">
             <li>
               <Link href={"/"}>Home</Link>
@@ -45,16 +57,22 @@ const Navbar: FC<NavbarProps> = () => {
           </ul>
         </div>
         <div className="flex gap-4">
-          <Button variant={"brand"} size={'sm'} className=" rounded-none">
+          <Button variant={"brand"} size={"sm"} className=" rounded-none">
             <ArrowDownIcon className="mr-4" /> Download Brochure
           </Button>
 
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               {isMobile ? (
-                <Button variant="outline" size={'icon'} className="border-none"> <GlobeIcon className="mr-4" /> </Button>
-              ):(
-                <Button variant="outline" className="border-none"> <GlobeIcon className="mr-4" /> English</Button>
+                <Button variant="outline" size={"icon"} className="border-none">
+                  {" "}
+                  <GlobeIcon className="mr-4" />{" "}
+                </Button>
+              ) : (
+                <Button variant="outline" className="border-none">
+                  {" "}
+                  <GlobeIcon className="mr-4" /> English
+                </Button>
               )}
             </DropdownMenuTrigger>
             <DropdownMenuContent className="lg:w-56">
@@ -74,8 +92,7 @@ const Navbar: FC<NavbarProps> = () => {
               <DropdownMenuGroup>
                 <DropdownMenuItem>Lang 2</DropdownMenuItem>
                 <DropdownMenuItem>
-                  Lang 2
-                  <DropdownMenuShortcut>⌘+T</DropdownMenuShortcut>
+                  Lang 2<DropdownMenuShortcut>⌘+T</DropdownMenuShortcut>
                 </DropdownMenuItem>
               </DropdownMenuGroup>
             </DropdownMenuContent>

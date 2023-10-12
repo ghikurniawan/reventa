@@ -76,3 +76,16 @@
     @apply bg-background text-foreground;
   }
 }
+
+
+/* Swiper Grid */
+.gridCol .swiper-wrapper {
+  flex-direction: row !important;
+}
+
+.gridCol .swiper-slide {
+  align-self: flex-start;
+  background: #fff;
+  /* Change column as you want by calc 3 <== examble */
+  height: 100% !important;
+}

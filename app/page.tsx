@@ -3,6 +3,9 @@ import Explore from '@/components/Explore';
 import Features from '@/components/Features';
 import Hero from '@/components/Hero';
 import Spesification from '@/components/Spesification';
+import Location from '@/components/Location';
+import Contact from '@/components/Contact';
+import Footer from '@/components/Footer';
 
 export default function Home() {
   const images = [
@@ -31,6 +34,9 @@ export default function Home() {
       <Explore />
       <Spesification cards={cards}/>
       <Amenities />
+      <Location />
+      <Contact />
+      <Footer />
     </main>
   )
 }
