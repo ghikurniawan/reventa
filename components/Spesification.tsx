@@ -37,8 +37,8 @@ const Spesification: FC<SpesificationProps> = ({ cards }) => {
 
   return (
     <div className="py-14 relative w-full bg-[url('/spesification/element_bg.png')] bg-right bg-contain bg-no-repeat flex items-center overflow-hidden">
-      <div className="flex w-full max-w-screen-xl mx-auto p-2">
-        <div className="flex-none max-w-sm lg:col-span-1 flex flex-col gap-6 pl-2 justify-center">
+      <div className="flex flex-col lg:flex-row w-full max-w-screen-xl mx-auto p-2">
+        <div className="lg:flex-none max-w-sm lg:col-span-1 flex flex-col gap-6 pl-2 justify-center">
           <h3
             className={`text-2xl lg:text-4xl text-center lg:text-left ${tenor.className}`}
           >
@@ -48,7 +48,7 @@ const Spesification: FC<SpesificationProps> = ({ cards }) => {
             We assure you that you&apos;ll get our best, as that&apos;s what we
             expect of ourselves.
           </p>
-          <div className=" space-x-4">
+          <div className=" space-x-4 w-full flex justify-center lg:justify-start">
             <Button onClick={() => swiperRef.current?.slidePrev()} variant={"default"} size={"icon"} className="rounded-none">
               <ChevronLeftIcon />
             </Button>
@@ -56,7 +56,7 @@ const Spesification: FC<SpesificationProps> = ({ cards }) => {
               <ChevronRightIcon />
             </Button>
           </div>
-          <p>
+          <p className="text-center lg:text-start">
             {activeSlide + 1}<span className=" text-brandSecodary">/4</span>
           </p>
         </div>

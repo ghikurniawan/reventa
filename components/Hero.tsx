@@ -27,7 +27,7 @@ const Hero: React.FC<HeroProps> = ({ images }) => {
   const [selectedTab, setSelectedTab] = useState(images[0]);
   const [index, setIndex] = useState(0);
   let { scrollYProgress } = useScroll();
-  let y = useTransform(scrollYProgress, [0, 1], ["0%", "300%"]);
+  let y = useTransform(scrollYProgress, [0, 1], ["0%", "500%"]);
 
   useEffect(() => {
     const interval = setInterval(() => {

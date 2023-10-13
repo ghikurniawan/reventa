@@ -16,7 +16,7 @@ const Contact: FC<SpesificationProps> = ({}) => {
         >
           Get in touch
         </h1>
-        <p>
+        <p className="text-center lg:text-left">
           Please kindly fill out the form below, we will get back to you soon.
         </p>
         <div className=" flex gap-6 max-w-xl">

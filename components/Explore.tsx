@@ -69,9 +69,9 @@ const Explore: FC<ExploreProps> = () => {
           </div>
         </div>
         <div className="grid grid-cols-5 w-full gap-4">
-          <div className="w-full h-full col-span-3 relative">
+          <div className="w-full h-full col-span-5 lg:col-span-3 relative">
             <div className="flex flex-col text-white ">
-              <h3 className={`text-2xl lg:text-4xl mb-4 ${tenor.className}`}>
+              <h3 className={`text-2xl lg:text-4xl text-center lg:text-start mb-4 ${tenor.className}`}>
                 ORCHID
               </h3>
               <p className="font-light">25x50 PLOT AREA (WEST)</p>
@@ -80,8 +80,8 @@ const Explore: FC<ExploreProps> = () => {
               <p className="font-bold">2,097 Sqft</p>
             </div>
           </div>
-          <div className="w-full h-full relative">
-            <AspectRatio ratio={4 / 3}>
+          <div className="w-full h-full relative col-span-2 lg:col-span-1">
+            <AspectRatio ratio={4 / 3} className="h-24 lg:h-full">
               <Image
                 src={"/explore_images/orchid_isometri1.png"}
                 alt="Orchid"
@@ -90,13 +90,15 @@ const Explore: FC<ExploreProps> = () => {
               />
             </AspectRatio>
           </div>
-          <div className="w-full h-full relative">
+          <div className="w-full h-full relative col-span-2 lg:col-span-1">
+          <AspectRatio ratio={4 / 3} className="h-24 lg:h-full">
             <Image
               src={"/explore_images/orchid_isometri2.png"}
               alt="Orchid"
               fill
               className="object-cover overflow-visible"
             />
+            </AspectRatio>
           </div>
         </div>
       </div>
