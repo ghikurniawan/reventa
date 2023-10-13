@@ -31,23 +31,21 @@ const Navbar: FC<NavbarProps> = () => {
         scrolled ? "bg-white bg-opacity-30 backdrop-blur-lg" : ""
       }`}
     >
+      <nav className="flex justify-between items-center my w-full max-w-screen-xl mx-auto h-20 lg:h-[110px] p-2">
+        <div className="flex gap-2 lg:gap-28 items-center">
       {isMobile ? (
-        <div className="w-full flex justify-center pt-2">
+        <div className="w-full flex justify-center">
           <Image src="/logo.png" alt="Reventa Logo" height={50} width={50} />
         </div>
       ) : (
-        ""
-      )}
-      <nav className="flex justify-between items-center my w-full max-w-screen-xl mx-auto h-20 lg:h-[110px] p-2">
-        <div className="flex gap-2 lg:gap-28 items-center">
           <Image
             src="/logo.png"
             alt="Reventa Logo"
             height={100}
             width={100}
-            className="hidden lg:block"
           />
-          <ul className="flex gap-2 lg:gap-10 text-brand">
+      )}
+          <ul className="hidden lg:flex gap-2 lg:gap-10 text-brand">
             <li>
               <Link href={"/"}>Home</Link>
             </li>
